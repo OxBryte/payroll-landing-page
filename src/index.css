@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
-
 @theme {
   --color-c-bg: #0f0f0f;
   /* --color-c-bg-2: #1d283a; */
-  --color-c-color: #94C294;
+  --color-c-color: #94c294;
   --color-c-color-sec: #74af74;
-  --color-c-color-2: #F9FAFB;
+  --color-c-color-2: #f9fafb;
+  --font-bricolage: "Bricolage Grotesque Variable", sans-serif;
+}
+
+body {
+  font-family: "Inter Variable", sans-serif;
 }

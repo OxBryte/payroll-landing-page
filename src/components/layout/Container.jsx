@@ -1,5 +1,11 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 export default function Container({ children }) {
-  return <div className="w-full mx-auto max-w-[1350px] px-4">{children}</div>;
+  return (
+    <div className="w-full mx-auto max-w-[1350px] px-4 flex flex-col gap-0">
+      <Navbar />
+      {children}
+    </div>
+  );
 }
