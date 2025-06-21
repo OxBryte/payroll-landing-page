@@ -13,11 +13,11 @@ export default function Hero() {
         <p className="text-sm font-light">
           Simplifying payroll management for businesses of all sizes.
         </p>
-        <button className="bg-c-color px-4 py-2 rounded-md text-sm text-white">
+        <button className="border-button bg-c-color px-4 py-2 rounded-md text-sm text-white cursor-pointer">
           Launch App
         </button>
       </div>
-      <div className="absolute inset-x-0 -bottom-30 m-auto bg-gradient-to-br from-c-color to-black w-60 h-60 blur-[30px] rounded-full"></div>
+      <div className="absolute inset-x-0 -bottom-60 m-auto bg-gradient-to-br from-c-color to-black w-[440px] h-[440px] blur-[30px] rounded-full"></div>
     </div>
   );
 }

@@ -14,6 +14,12 @@ export default function Navbar() {
           About
         </a>
         <a
+          href="#about"
+          className="hover:text-c-color font-light text-sm hover:font-semibold"
+        >
+          Jobs
+        </a>
+        <a
           href="#features"
           className="hover:text-c-color font-light text-sm hover:font-semibold"
         >
