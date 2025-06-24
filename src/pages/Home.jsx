@@ -4,6 +4,7 @@ import Hero from "../components/features/Hero";
 import About from "../components/features/About";
 import Benefits from "../components/features/Benefits";
 import Navbar from "../components/layout/Navbar";
+import Features from "../components/features/Features";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Benefits />
         <About />
       </Container>
+      <Features />
     </div>
   );
 }

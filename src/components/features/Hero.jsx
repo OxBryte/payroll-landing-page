@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <div className="w-full min-h-[100dvh] mx-auto relative">
       <Navbar />
-      <div className="w-full min-h-[95dvh] p-4 md:p-10 mx-auto relative flex flex-col items-center overflow-hidden justify-center bg-[#000] text-white">
+      <div className="w-full min-h-[95dvh] p-4 md:p-10 mx-auto relative flex flex-col items-center overflow-hidden justify-center bg-c-bg text-white">
         <div className="flex flex-col gap-4 z-10 items-center text-center">
           <div className="bg-c-color/20 px-4 py-2 rounded-lg flex items-center gap-2 text-c-color">
             <BsLightningChargeFill />
