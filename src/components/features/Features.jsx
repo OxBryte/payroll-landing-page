@@ -12,7 +12,7 @@ export default function Features() {
           </h2>
           <div className="w-fit grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
             <div className="text-white p-10 rounded-2xl border border-white/20 overflow-hidden relative max-w-[360px] h-[360px] flex flex-col justify-end items-center gap-6">
-              <div className="absolute top-0 right-0 mx-auto w-[120px] h-[120px] bg-c-color/40 rounded-full blur-[60px]"></div>
+              <div className="absolute top-0 right-0 mx-auto w-[120px] h-[120px] bg-c-color/20 rounded-full blur-[60px]"></div>
               <div className="flex flex-col items-center gap-2">
                 <div className="py-4 h-[160px] items-center w-full flex gap-3 justify-center">
                   <img src="/arb.svg" alt="" className="w-12" />
@@ -26,7 +26,7 @@ export default function Features() {
               </div>
             </div>
             <div className="text-white p-10 rounded-2xl border border-white/20 overflow-hidden relative max-w-[360px] h-[360px] flex flex-col justify-end items-center gap-6">
-              <div className="absolute top-0 right-0 mx-auto w-[120px] h-[120px] bg-c-color/40 rounded-full blur-[60px]"></div>
+              <div className="absolute top-0 right-0 mx-auto w-[120px] h-[120px] bg-c-color/20 rounded-full blur-[60px]"></div>
               <div className="flex flex-col items-center gap-2">
                 <div className="py-4 h-[160px] items-center w-full flex gap-3 justify-center">
                   <img src="/usdt.svg" alt="" className="w-12" />
@@ -41,7 +41,7 @@ export default function Features() {
               </div>
             </div>
             <div className="text-white p-10 rounded-2xl border border-white/20 overflow-hidden relative max-w-[360px] h-[360px] flex flex-col justify-end items-center gap-6">
-              <div className="absolute top-0 right-0 mx-auto w-[120px] h-[120px] bg-c-color/40 rounded-full blur-[60px]"></div>
+              <div className="absolute top-0 right-0 mx-auto w-[120px] h-[120px] bg-c-color/20 rounded-full blur-[60px]"></div>
               <div className="flex flex-col items-center gap-2">
                 <h3 className="text-lg font-semibold">Custom Reporting</h3>
                 <p className="text-white/50 text-center text-sm">
@@ -50,8 +50,11 @@ export default function Features() {
               </div>
             </div>
             <div className="text-white p-10 rounded-2xl border border-white/20 overflow-hidden relative max-w-[360px] h-[360px] flex flex-col justify-end items-center gap-6">
-              <div className="absolute top-0 right-0 mx-auto w-[120px] h-[120px] bg-c-color/40 rounded-full blur-[60px]"></div>
+              <div className="absolute top-0 right-0 mx-auto w-[120px] h-[120px] bg-c-color/20 rounded-full blur-[60px]"></div>
               <div className="flex flex-col items-center gap-2">
+                <div className="py-4 h-[160px] items-center w-full flex gap-3 justify-center">
+                  <img src="/grid.svg" alt="" className="ml-4" />
+                </div>
                 <h3 className="text-lg font-semibold">
                   Batch Payroll Transactions
                 </h3>
