@@ -15,9 +15,12 @@ export default function CTA() {
               Launch App
             </button>
             <button className="bg-white px-4 py-2 rounded-md text-sm text-black scale-[110%]">
-              Request Demo
+              Request a Demo
             </button>
           </div>
+        </div>
+        <div className="absolute -bottom-10 -right-10 opacity-10 w-[320px]">
+          <img src="/glok-logo.svg" alt="" className="w-full" />
         </div>
       </div>
     </Container>
