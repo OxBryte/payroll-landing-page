@@ -5,6 +5,7 @@ import About from "../components/features/About";
 import Benefits from "../components/features/Benefits";
 import Navbar from "../components/layout/Navbar";
 import Features from "../components/features/Features";
+import Pricing from "../components/features/Pricing";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <About />
       </Container>
       <Features />
+      <Pricing />
     </div>
   );
 }
