@@ -13,7 +13,7 @@ export default function Pricing() {
           <div className="px-5 py-2 border border-gray-200 bg-gray-50 rounded-md text-xs font-medium">
             Yearly
           </div>
-          <div className="flex flex-col md:flex-row justify-center gap-6 w-full">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 w-full">
             <div className="space-y-0 w-full max-w-sm">
               <div className="border border-gray-200 p-6 rounded-2xl relative z-10 bg-white">
                 <div className="w-full space-y-8">

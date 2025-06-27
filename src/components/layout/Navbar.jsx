@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <div className="w-full h-18 flex items-center justify-between max-w-[1450px] px-4 mx-auto">
+    <div className="w-full h-20 flex items-center justify-between max-w-[1450px] px-4 mx-auto">
       <div className="">
         <img src="/glok-logo.svg" alt="" className="w-8" />
       </div>
