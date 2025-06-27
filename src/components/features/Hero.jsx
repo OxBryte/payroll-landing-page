@@ -13,7 +13,7 @@ export default function Hero() {
             <p className="text-xs font-normal">Latest update</p>
             {/* <BsArrowRight/> */}
           </div>
-          <p className="font-bricolage text-[53px] font-bold leading-[60px]">
+          <p className="font-bricolage text-[28px] md:text-[64px] font-bold leading-[60px]">
             Forge Trust <br /> with Every{" "}
             <span className="italic bg-clip-text text-transparent bg-gradient-to-r from-c-color to-c-color/50">
               Paycheck
