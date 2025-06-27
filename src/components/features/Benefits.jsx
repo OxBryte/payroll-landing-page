@@ -4,7 +4,7 @@ export default function Benefits() {
   return (
     <div className="w-full p-6 md:py-20 z-10 flex flex-col justify-center items-center">
       <h2 className="text-xl md:text-3xl font-semibold font-bricolage text-center mb-8">
-        Key Benefits
+        Why GLOC?
       </h2>
       <div className="w-fit grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
         <div className="bg-white p-10 rounded-2xl border border-gray-200 max-w-[360px] flex flex-col items-center gap-6">

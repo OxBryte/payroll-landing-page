@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="">
         <img src="valourpay_icon.svg" alt="" className="w-10" />
       </div>
-      <div className="flex items-center gap-4">
+      <div className="hidden md:flex items-center gap-4">
         <a
           href="#about"
           className="hover:text-c-color font-light text-sm hover:font-semibold"
@@ -17,7 +17,7 @@ export default function Navbar() {
           href="#about"
           className="hover:text-c-color font-light text-sm hover:font-semibold"
         >
-          Jobs
+          Jobs(Coming soon)
         </a>
         <a
           href="#features"
