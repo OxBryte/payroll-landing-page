@@ -14,7 +14,7 @@ export default function Pricing() {
             Yearly
           </div>
           <div className="flex flex-col md:flex-row justify-center gap-6 w-full">
-            <div className="space-y-0 w-sm">
+            <div className="space-y-0 w-full max-w-sm">
               <div className="border border-gray-200 p-6 rounded-2xl relative z-10 bg-white">
                 <div className="w-full space-y-8">
                   <div className="flex items-top justify-between gap-5">
@@ -79,7 +79,7 @@ export default function Pricing() {
                 </button>
               </div>
             </div>
-            <div className="space-y-0 w-sm">
+            <div className="space-y-0 w-full max-w-sm">
               <div className="border border-gray-200 p-6 rounded-2xl relative z-10 bg-white">
                 <div className="w-full space-y-8">
                   <div className="flex items-top justify-between gap-5">

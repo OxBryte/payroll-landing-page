@@ -7,7 +7,7 @@ export default function Footer() {
     <div className="py-6 border-t border-gray-200">
       <Container>
         <div className="w-full mx-auto flex items-center justify-between gap-6">
-          <img src="/glok-logo-black.svg" alt="" className="w-12" />
+          <img src="/glok-logo-4.svg" alt="" className="w-22" />
           <div className="flex items-center gap-4 text-gray-500 hover:text-c-color transition-colors">
             <div className="text-gray-500 hover:text-c-color transition-colors">
               <BsTwitterX size={20} />

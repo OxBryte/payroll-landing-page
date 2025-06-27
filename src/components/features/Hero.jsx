@@ -13,13 +13,13 @@ export default function Hero() {
             <p className="text-xs font-normal">Latest update</p>
             {/* <BsArrowRight/> */}
           </div>
-          <p className="font-bricolage text-[28px] md:text-[64px] font-bold leading-[60px]">
+          <p className="font-bricolage text-[32px] md:text-[64px] font-bold leading-[34px] md:leading-[60px]">
             Forge Trust <br /> with Every{" "}
             <span className="italic bg-clip-text text-transparent bg-gradient-to-r from-c-color to-c-color/50">
               Paycheck
             </span>{" "}
           </p>
-          <p className="max-w-[560px] w-full font-light">
+          <p className="max-w-[560px] text-sm md:text-md w-full font-light">
             Deliver seamless, transparent payroll experiences that honor your
             team's dedication and fuel your company's ambition.
           </p>
