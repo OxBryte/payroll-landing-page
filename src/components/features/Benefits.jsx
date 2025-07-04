@@ -14,18 +14,21 @@ export default function Benefits() {
       title: "Save Time",
       description: "One-click payroll runs—no more manual spreadsheets.",
       color: "from-blue-500/20 to-purple-500/20",
+      alt: "Time saving icon for automated payroll processing",
     },
     {
       icon: "/error.svg",
       title: "Eliminate Errors",
       description: "Automated tax calculations and real-time validation.",
       color: "from-green-500/20 to-emerald-500/20",
+      alt: "Error elimination icon for automated validation",
     },
     {
       icon: "/data.svg",
       title: "Scale with Confidence",
       description: "From 5 to 5,000 employees, we've got you covered.",
       color: "from-orange-500/20 to-red-500/20",
+      alt: "Scalability icon for growing businesses",
     },
     {
       icon: "/crypto.svg",
@@ -33,6 +36,7 @@ export default function Benefits() {
       description:
         "Empower your global team with near-real-time, cross-border crypto payouts—no intermediaries, no delays, minimal fees.",
       color: "from-c-color/20 to-c-color-sec/20",
+      alt: "Cryptocurrency icon for instant global settlements",
     },
   ];
 
@@ -59,7 +63,10 @@ export default function Benefits() {
   };
 
   return (
-    <div className="w-full p-6 md:py-24 z-10 flex flex-col justify-center items-center ">
+    <section
+      className="w-full p-6 md:py-24 z-10 flex flex-col justify-center items-center"
+      aria-labelledby="benefits-heading"
+    >
       <motion.div
         ref={ref}
         className="max-w-6xl mx-auto w-full"
@@ -73,7 +80,10 @@ export default function Benefits() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold font-bricolage text-gray-900 mb-6">
+          <h2
+            id="benefits-heading"
+            className="text-3xl md:text-5xl font-bold font-bricolage text-gray-900 mb-6"
+          >
             Why <span className="text-c-color">GLÖC</span>?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -82,12 +92,17 @@ export default function Benefits() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10"
+          role="list"
+          aria-label="Benefits of GLÖC platform"
+        >
           {benefits.map((benefit, index) => (
-            <motion.div
+            <motion.article
               key={index}
               className="group relative"
               variants={cardVariants}
+              role="listitem"
             >
               <motion.div
                 className="bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-lg shadow-gray-100/50 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-500 h-full"
@@ -107,11 +122,13 @@ export default function Benefits() {
                   <motion.div
                     className="w-20 h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
                     whileHover={{ rotate: 5 }}
+                    aria-hidden="true"
                   >
                     <img
                       src={benefit.icon}
-                      alt={benefit.title}
+                      alt={benefit.alt}
                       className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
                     />
                   </motion.div>
 
@@ -125,10 +142,13 @@ export default function Benefits() {
                   </div>
 
                   {/* Hover effect line */}
-                  <div className="w-0 h-0.5 bg-gradient-to-r from-c-color to-c-color-sec group-hover:w-16 transition-all duration-500" />
+                  <div
+                    className="w-0 h-0.5 bg-gradient-to-r from-c-color to-c-color-sec group-hover:w-16 transition-all duration-500"
+                    aria-hidden="true"
+                  />
                 </div>
               </motion.div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
 
@@ -138,27 +158,38 @@ export default function Benefits() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.8 }}
+          role="region"
+          aria-label="GLÖC platform statistics"
         >
           <div className="space-y-2">
-            <div className="text-3xl md:text-4xl font-bold text-c-color">
+            <div
+              className="text-3xl md:text-4xl font-bold text-c-color"
+              aria-label="500 plus companies trust GLÖC"
+            >
               500+
             </div>
             <div className="text-gray-600 font-medium">Companies Trust Us</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl md:text-4xl font-bold text-c-color">
+            <div
+              className="text-3xl md:text-4xl font-bold text-c-color"
+              aria-label="99.9 percent uptime guarantee"
+            >
               99.9%
             </div>
             <div className="text-gray-600 font-medium">Uptime Guarantee</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl md:text-4xl font-bold text-c-color">
+            <div
+              className="text-3xl md:text-4xl font-bold text-c-color"
+              aria-label="24/7 support available"
+            >
               24/7
             </div>
             <div className="text-gray-600 font-medium">Support Available</div>
           </div>
         </motion.div>
       </motion.div>
-    </div>
+    </section>
   );
 }

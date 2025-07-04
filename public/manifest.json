@@ -1,0 +1,31 @@
+{
+  "name": "GLÖC - Blockchain-Powered Crypto Payroll Platform",
+  "short_name": "GLÖC",
+  "description": "Transform your payroll with GLÖC's blockchain-powered platform. Instant crypto settlements, multi-chain support, and automated tax calculations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#94c294",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/gloc-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/gloc-logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/gloc-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "finance", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+} 
