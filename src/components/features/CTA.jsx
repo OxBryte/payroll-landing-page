@@ -20,7 +20,7 @@ export default function CTA() {
           </div>
         </div>
         <div className="absolute -bottom-10 -right-10 opacity-10 w-[320px]">
-          <img src="/glok-logo.svg" alt="" className="w-full" />
+          <img src="/gloc-logo.svg" alt="" className="w-full" />
         </div>
       </div>
     </Container>
