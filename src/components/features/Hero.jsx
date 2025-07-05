@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { BsArrowRight, BsLightningChargeFill } from "react-icons/bs";
 import Navbar from "../layout/Navbar";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -82,21 +83,24 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <motion.button
-              className="bg-gradient-to-r from-c-color to-c-color-sec px-8 py-4 rounded-xl text-white font-semibold text-base shadow-lg shadow-c-color/25 flex items-center gap-2 group"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(148, 194, 148, 0.3)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              Launch App
-              <BsArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
-            </motion.button>
+            <Link to="/">
+              <motion.button
+                className="cursor-pointer bg-gradient-to-r from-c-color to-c-color-sec px-8 py-4 rounded-xl text-white font-semibold text-base shadow-lg shadow-c-color/25 flex items-center gap-2 group"
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(148, 194, 148, 0.3)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                Launch App
+                <BsArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+              </motion.button>
+            </Link>
 
             <motion.button
-              className="border-2 border-white/20 px-8 py-4 rounded-xl text-white font-medium text-base backdrop-blur-sm hover:border-c-color/50 transition-colors duration-300"
+              className="cursor-pointer border-2 border-white/20 px-8 py-4 rounded-xl text-white font-medium text-base backdrop-blur-sm hover:border-c-color/50 transition-colors duration-300"
+              disabled
               whileHover={{
                 scale: 1.05,
                 borderColor: "rgba(148, 194, 148, 0.5)",

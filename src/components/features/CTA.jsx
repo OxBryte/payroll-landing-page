@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../layout/Container";
+import { Link } from "react-router-dom";
 
 export default function CTA() {
   return (
@@ -11,12 +12,19 @@ export default function CTA() {
             Ready to simplify payroll?
           </h2>
           <div className="flex gap-6 items-center">
-            <button className="bg-c-color px-4 py-2 rounded-md text-sm text-white scale-[110%]">
-              Launch App
-            </button>
-            <button className="bg-white px-4 py-2 rounded-md text-sm text-black scale-[110%]">
-              Request a Demo
-            </button>
+            <Link to="/">
+              <button className="bg-c-color px-4 py-2 rounded-md text-sm text-white scale-[110%] cursor-pointer">
+                Launch App
+              </button>
+            </Link>
+            <Link
+              to="https://calendly.com/olumidesilas/gloc-payroll"
+              target="_blank"
+            >
+              <button className="bg-white px-4 py-2 rounded-md text-sm text-black scale-[110%] cursor-pointer">
+                Request a Demo
+              </button>
+            </Link>
           </div>
         </div>
         <div className="absolute -bottom-10 -right-10 opacity-10 w-[320px]">

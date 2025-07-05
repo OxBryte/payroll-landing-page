@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,18 +65,19 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <motion.button
-            className="hidden md:block bg-gradient-to-r from-c-color to-c-color-sec px-6 py-2.5 rounded-lg text-white font-semibold text-sm shadow-lg shadow-c-color/25"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 10px 25px rgba(148, 194, 148, 0.3)",
-            }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          >
-            Launch App
-          </motion.button>
-
+          <Link to="/">
+            <motion.button
+              className="hidden md:block cursor-pointer bg-gradient-to-r from-c-color to-c-color-sec px-6 py-2.5 rounded-lg text-white font-semibold text-sm shadow-lg shadow-c-color/25"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 10px 25px rgba(148, 194, 148, 0.3)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              Launch App
+            </motion.button>
+          </Link>
           {/* Mobile Menu Button */}
           <motion.button
             className="md:hidden text-white p-2"
