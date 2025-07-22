@@ -1,69 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../components/layout/Container";
 import { BsGridFill, BsRocketTakeoffFill } from "react-icons/bs";
 import { BiSolidBriefcaseAlt } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGear } from "react-icons/fa6";
 import { HiLockClosed } from "react-icons/hi";
+import { roadmapData } from "../components/data/roadmapData";
 
 export default function Roadmap() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("auth");
+
+  // Set active tab based on URL hash on initial load and when URL changes
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (hash) {
+      setActiveTab(hash);
+    } else {
+      // Default to 'auth' if no hash is present
+      navigate("/roadmap#auth", { replace: true });
+    }
+  }, [location.hash, navigate]);
+
   const tabsData = [
     {
       name: "Auth",
       icon: <HiLockClosed />,
       href: "#auth",
-      current: true,
+      id: "auth",
     },
     {
       name: "Dashboard",
       icon: <BsGridFill />,
       href: "#dashboard",
-      current: false,
+      id: "dashboard",
     },
     {
       name: "Workspace",
       icon: <BsRocketTakeoffFill />,
       href: "#workspace",
-      current: false,
+      id: "workspace",
     },
     {
       name: "Jobs",
       icon: <BiSolidBriefcaseAlt />,
       href: "#jobs",
-      current: false,
+      id: "jobs",
     },
     {
       name: "Settings",
       icon: <FaGear />,
       href: "#settings",
-      current: false,
+      id: "settings",
     },
   ];
-  // Sample roadmap data - you can replace with your actual data
-  const roadmapItems = [
-    {
-      id: 1,
-      task: "Research & Planning",
-      status: "completed",
-      date: "Q1 2025",
-    },
-    { id: 2, task: "UI/UX Design", status: "completed", date: "Q2 2025" },
-    {
-      id: 3,
-      task: "Frontend Development",
-      status: "in-progress",
-      date: "Q2-Q3 2025",
-    },
-    {
-      id: 4,
-      task: "Backend Integration",
-      status: "in-progress",
-      date: "Q3 2025",
-    },
-    { id: 5, task: "Beta Testing", status: "upcoming", date: "Q3 2025" },
-    { id: 6, task: "Public Launch", status: "upcoming", date: "Q4 2025" },
-  ];
-
   // Function to determine the status color
   const getStatusColor = (status) => {
     switch (status) {
@@ -86,6 +77,21 @@ export default function Roadmap() {
       .join(" ");
   };
 
+  // Handle tab click
+  const handleTabClick = (tabId) => {
+    navigate(`/roadmap${tabsData.find((tab) => tab.id === tabId).href}`);
+    setActiveTab(tabId);
+  };
+
+  // Get current roadmap items based on active tab
+  const currentRoadmapItems = roadmapData[activeTab] || [];
+
+  // Get tab title for display
+  const getTabTitle = () => {
+    const tab = tabsData.find((tab) => tab.id === activeTab);
+    return tab ? tab.name : "Roadmap";
+  };
+
   return (
     <div className="w-full mx-auto">
       <Container>
@@ -95,20 +101,20 @@ export default function Roadmap() {
             <div className="flex w-fit gap-1 bg-white border border-gray-200 p-1 rounded-full justify-center items-center">
               {tabsData.map((tab) => (
                 <Link
-                  key={tab.name}
-                  to={tab.href}
+                  key={tab.id}
+                  to={`/roadmap${tab.href}`}
                   className={`
-                      whitespace-nowrap flex items-center gap-2 font-medium text-xs px-4 py-2.5 rounded-full transition-colors duration-200
-                      ${
-                        tab.current
-                          ? "bg-c-color text-white"
-                          : "hover:bg-gray-100"
-                      }
-                    `}
-                  aria-current={tab.current ? "page" : undefined}
+                    whitespace-nowrap flex items-center gap-2 font-medium text-xs px-4 py-2.5 rounded-full transition-colors duration-200
+                    ${
+                      activeTab === tab.id
+                        ? "bg-c-color text-white"
+                        : "hover:bg-gray-100"
+                    }
+                  `}
+                  aria-current={activeTab === tab.id ? "page" : undefined}
                   onClick={(e) => {
                     e.preventDefault();
-                    tab.current = true;
+                    handleTabClick(tab.id);
                   }}
                 >
                   {tab.icon}
@@ -117,19 +123,19 @@ export default function Roadmap() {
               ))}
             </div>
           </div>
-          <div className="spsace-y-2">
-            <h1 className="text-lg font-bold">Product Roadmap</h1>
+          <div className="space-y-2">
+            <h1 className="text-lg font-bold">{getTabTitle()} Roadmap</h1>
             <p className="text-gray-600 text-xs font-light">
-              Our development timeline and progress
+              Development timeline and progress for {getTabTitle()}
             </p>
           </div>
 
           {/* Roadmap items */}
           <div className="space-y-8">
-            {roadmapItems.map((item, index) => (
+            {currentRoadmapItems.map((item, index) => (
               <div key={item.id} className="relative">
                 {/* Timeline connector */}
-                {index < roadmapItems.length - 1 && (
+                {index < currentRoadmapItems.length - 1 && (
                   <div className="absolute left-[19px] top-[40px] w-1 bg-gray-200 h-[calc(100%+32px-8px)]"></div>
                 )}
 
