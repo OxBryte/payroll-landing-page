@@ -75,10 +75,10 @@ export default function Roadmap() {
   return (
     <div className="w-full mx-auto">
       <Container>
-        <div className="max-w-[640px] mx-auto w-full py-10 space-y-10">
-          <div className="text-center">
-            {/* Tabs Navigation */}
-            <div className="flex w-fit gap-2 bg-white border border-gray-200 p-2 rounded-full justify-center items-center">
+        <div className="max-w-[560px] mx-auto w-full py-10 space-y-10">
+          {/* Tabs Navigation */}
+          <div className="w-full flex flex-col items-center gap-3">
+            <div className="flex w-fit gap-2 bg-white border border-gray-200 p-1 rounded-full justify-center items-center">
               {tabsData.map((tab) => (
                 <Link
                   key={tab.name}
@@ -93,20 +93,20 @@ export default function Roadmap() {
                     `}
                   aria-current={tab.current ? "page" : undefined}
                   onClick={(e) => {
-                      e.preventDefault();
-                      tab.current = true; 
+                    e.preventDefault();
+                    tab.current = true;
                   }}
                 >
                   {tab.name}
                 </Link>
               ))}
             </div>
-            <h1 className="text-3xl font-bold mb-2">Product Roadmap</h1>
-            <p className="text-gray-600 mb-6">
+            <h1 className="text-xl font-bold">Product Roadmap</h1>
+            <p className="text-gray-600">
               Our development timeline and progress
             </p>
           </div>
-
+          {/* Roadmap items */}
           <div className="space-y-8">
             {roadmapItems.map((item, index) => (
               <div key={item.id} className="relative">
