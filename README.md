@@ -10,6 +10,16 @@ This repository contains the source code for the Payroll Landing Page, a respons
 - **Product Roadmap**: Interactive timeline showing development progress and future plans.
 - **Tab Navigation**: Easily switch between different sections (Dashboard, Workspace, Jobs).
 
+### Roadmap Tabs
+
+The roadmap includes the following tabs for easy navigation:
+
+1. **Dashboard**: Overview of key metrics and updates.
+2. **Workspace**: Collaborative tools and resources for team members.
+3. **Jobs**: Job postings, applications, and hiring progress.
+
+Each tab is designed to provide a seamless user experience with intuitive navigation and responsive layouts.
+
 ## Technologies Used
 
 - HTML5
