@@ -4,13 +4,13 @@ export const roadmapData = {
     {
       id: 1,
       task: "Signup/Onboarding",
-      status: "pending",
+      status: "completed",
       date: "",
     },
     {
       id: 2,
       task: "Reduce Token Expiry",
-      status: "pending",
+      status: "completed",
       date: "",
     },
     {
@@ -18,13 +18,13 @@ export const roadmapData = {
       task: "Remove Wallet from User Signup",
       status: "pending",
       date: "",
-    }
+    },
   ],
   dashboard: [
     {
       id: 1,
       task: "Setup Company Profile and Information",
-      status: "pending",
+      status: "completed",
       date: "",
     },
     {
@@ -38,7 +38,7 @@ export const roadmapData = {
       task: "Revenue Margin Tracking (3% per transaction)",
       status: "pending",
       date: "",
-    }
+    },
   ],
   workspace: [
     {
@@ -64,7 +64,7 @@ export const roadmapData = {
       task: "Add Team Functionality",
       status: "pending",
       date: "",
-    }
+    },
   ],
   jobs: [
     {
@@ -102,7 +102,7 @@ export const roadmapData = {
       task: "Payment Schedule Management",
       status: "pending",
       date: "",
-    }
+    },
   ],
   settings: [
     {
@@ -140,6 +140,6 @@ export const roadmapData = {
       task: "Employment Term Settings",
       status: "pending",
       date: "",
-    }
-  ]
+    },
+  ],
 };

@@ -62,7 +62,7 @@ export default function Roadmap() {
   const getStatusColor = (status) => {
     switch (status) {
       case "completed":
-        return "bg-c-color";
+        return "bg-c-color text-white";
       case "in-progress":
         return "bg-yellow-500";
       case "upcoming":
@@ -74,11 +74,11 @@ export default function Roadmap() {
   const getStatusIcon = (status) => {
     switch (status) {
       case "completed":
-        return <PiCheckBold size={20} />;
+        return <PiCheckBold size={14} />;
       case "pending":
-        return <RiLoader2Line size={20} />;
+        return <RiLoader2Line size={14} />;
       case "upcoming":
-        return <GrStatusCriticalSmall size={20} />;
+        return <GrStatusCriticalSmall size={14} />;
       default:
         return "bg-gray-300";
     }
@@ -151,14 +151,14 @@ export default function Roadmap() {
               <div key={item.id} className="relative">
                 {/* Timeline connector */}
                 {index < currentRoadmapItems.length - 1 && (
-                  <div className="absolute left-[19px] top-[40px] w-[2px] bg-gray-100 h-[calc(100%+24px-8px)]"></div>
+                  <div className="absolute left-[12px] top-[10px] w-[2px] bg-gray-200 -z-1 h-[calc(100%+32px-8px)]"></div>
                 )}
 
                 {/* Roadmap item */}
                 <div className="flex items-start gap-4">
                   {/* Status indicator */}
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${getStatusColor(
+                    className={`w-6 h-6 p-1 rounded-lg flex items-center justify-center shrink-0 ${getStatusColor(
                       item.status
                     )}`}
                   >
@@ -168,10 +168,12 @@ export default function Roadmap() {
                   {/* Roadmap content */}
                   <div className="flex-1">
                     <div className="flex justify-between items-center">
-                      <h3 className="text-lg font-semibold">{item.task}</h3>
-                      <span className="text-sm text-gray-500">{item.date}</span>
+                      <h3 className="text-sm font-medium">{item.task}</h3>
+                      <span className="text-xs font-light text-gray-500">
+                        {item.date}
+                      </span>
                     </div>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-xs font-light text-gray-600 mt-1">
                       {formatStatus(item.status)}
                     </p>
                   </div>
