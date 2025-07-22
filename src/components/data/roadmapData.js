@@ -5,13 +5,13 @@ export const roadmapData = {
       id: 1,
       task: "Signup/Onboarding",
       status: "completed",
-      date: "24/05/2025",
+      date: "05/24/2025",
     },
     {
       id: 2,
       task: "Reduce Token Expiry",
       status: "completed",
-      date: "",
+      date: "05/28/2025",
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ export const roadmapData = {
       id: 1,
       task: "Setup Company Profile and Information",
       status: "completed",
-      date: "",
+      date: "05/24/2025",
     },
     {
       id: 2,
@@ -45,19 +45,19 @@ export const roadmapData = {
       id: 1,
       task: "Create Workspace for Business",
       status: "completed",
-      date: "",
+      date: "05/26/2025",
     },
     {
       id: 2,
       task: "Create Employee/Staff Table",
       status: "completed",
-      date: "",
+      date: "05/26/2025",
     },
     {
       id: 3,
       task: "Create Admin/Core-Team Table",
       status: "completed",
-      date: "",
+      date: "05/26/2025",
     },
     {
       id: 4,
@@ -69,7 +69,7 @@ export const roadmapData = {
       id: 5,
       task: "Create Payroll System",
       status: "completed",
-      date: "",
+      date: "06/01/2025",
     },
     {
       id: 6,
@@ -115,7 +115,7 @@ export const roadmapData = {
       id: 1,
       task: "Subscription Plan Management",
       status: "completed",
-      date: "",
+      date: "06/10/2025",
     },
     {
       id: 2,

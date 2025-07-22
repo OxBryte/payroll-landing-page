@@ -7,15 +7,12 @@ import { FaGear } from "react-icons/fa6";
 import { HiLockClosed } from "react-icons/hi";
 import { roadmapData } from "../components/data/roadmapData";
 import {
-  PiBatteryChargingVerticalFill,
   PiBatteryVerticalEmpty,
   PiBatteryVerticalFullFill,
   PiBatteryVerticalMediumFill,
-  PiCheckBold,
 } from "react-icons/pi";
-import { RiLoader2Line } from "react-icons/ri";
-import { GrStatusCriticalSmall } from "react-icons/gr";
 import { CgCalendar } from "react-icons/cg";
+import moment from "moment";
 
 export default function Roadmap() {
   const location = useLocation();
@@ -185,7 +182,7 @@ export default function Roadmap() {
                         <div className="flex flex-col items-end gap-1 text-gray-500">
                           <CgCalendar />
                           <span className="text-xs font-light">
-                            {item.date}
+                            {moment(item.date).format("LL")}
                           </span>
                         </div>
                       )}
