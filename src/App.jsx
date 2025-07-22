@@ -10,6 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/roadmap" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
