@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/roadmap" element={<Roadmap />} />
+          <Route path="/roadmap" element={<Roadmap />} />
         </Routes>
       </BrowserRouter>
     </>
