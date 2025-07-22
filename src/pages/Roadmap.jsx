@@ -1,7 +1,30 @@
 import React from "react";
 import Container from "../components/layout/Container";
+import { BsGridFill, BsRocketTakeoffFill } from "react-icons/bs";
+import { BiSolidBriefcaseAlt } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 export default function Roadmap() {
+  const tabsData = [
+    {
+      name: "Dashboard",
+      icon: <BsGridFill />,
+      href: "#dashboard",
+      current: true,
+    },
+    {
+      name: "Workspace",
+      icon: <BsRocketTakeoffFill />,
+      href: "#workspace",
+      current: false,
+    },
+    {
+      name: "Jobs",
+      icon: <BiSolidBriefcaseAlt />,
+      href: "#jobs",
+      current: false,
+    },
+  ];
   // Sample roadmap data - you can replace with your actual data
   const roadmapItems = [
     {
@@ -54,41 +77,34 @@ export default function Roadmap() {
       <Container>
         <div className="max-w-[640px] mx-auto w-full py-10 space-y-10">
           <div className="text-center">
+            {/* Tabs Navigation */}
+            <div className="flex w-fit gap-2 bg-white border border-gray-200 p-2 rounded-full justify-center items-center">
+              {tabsData.map((tab) => (
+                <Link
+                  key={tab.name}
+                  to={tab.href}
+                  className={`
+                      whitespace-nowrap font-medium text-xs px-4 py-2.5 rounded-full transition-colors duration-200
+                      ${
+                        tab.current
+                          ? "bg-c-color text-white"
+                          : "hover:bg-gray-100"
+                      }
+                    `}
+                  aria-current={tab.current ? "page" : undefined}
+                  onClick={(e) => {
+                      e.preventDefault();
+                      tab.current = true; 
+                  }}
+                >
+                  {tab.name}
+                </Link>
+              ))}
+            </div>
             <h1 className="text-3xl font-bold mb-2">Product Roadmap</h1>
             <p className="text-gray-600 mb-6">
               Our development timeline and progress
             </p>
-
-            {/* Tabs Navigation */}
-            <div className="flex justify-center border-b border-gray-200">
-              <nav className="flex space-x-8" aria-label="Tabs">
-                {[
-                  { name: "Dashboard", href: "#dashboard", current: true },
-                  { name: "Workspace", href: "#workspace", current: false },
-                  { name: "Jobs", href: "#jobs", current: false },
-                ].map((tab) => (
-                  <a
-                    key={tab.name}
-                    href={tab.href}
-                    className={`
-                      whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm
-                      ${
-                        tab.current
-                          ? "border-indigo-500 text-indigo-600"
-                          : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-                      }
-                    `}
-                    aria-current={tab.current ? "page" : undefined}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      // Add tab switching logic here if needed
-                    }}
-                  >
-                    {tab.name}
-                  </a>
-                ))}
-              </nav>
-            </div>
           </div>
 
           <div className="space-y-8">
