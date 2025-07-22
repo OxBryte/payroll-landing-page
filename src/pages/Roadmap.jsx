@@ -118,7 +118,7 @@ export default function Roadmap() {
           {/* Tabs Navigation */}
           <div className="w-full flex flex-col items-center gap-3">
             <img src="gloc-logo.svg" alt="" className="w-10" />
-            <div className="flex w-fit gap-1 bg-white border border-gray-200 p-1 rounded-full justify-center items-center overflow-x-auto">
+            <div className="flex w-full md:w-fit gap-1 bg-white border border-gray-200 p-1 rounded-full justify-start items-center overflow-x-auto">
               {tabsData.map((tab) => (
                 <Link
                   key={tab.id}
