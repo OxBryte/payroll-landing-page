@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useSwipeable } from "react-swipeable";
 import Container from "../components/layout/Container";
 import { BsGridFill, BsRocketTakeoffFill } from "react-icons/bs";
 import { BiSolidBriefcaseAlt } from "react-icons/bi";
@@ -18,17 +19,6 @@ export default function Roadmap() {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("auth");
-
-  // Set active tab based on URL hash on initial load and when URL changes
-  useEffect(() => {
-    const hash = location.hash.replace("#", "");
-    if (hash) {
-      setActiveTab(hash);
-    } else {
-      // Default to 'auth' if no hash is present
-      navigate("/roadmap#auth", { replace: true });
-    }
-  }, [location.hash, navigate]);
 
   const tabsData = [
     {
@@ -62,6 +52,44 @@ export default function Roadmap() {
       id: "settings",
     },
   ];
+
+  // Set active tab based on URL hash on initial load and when URL changes
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (hash) {
+      setActiveTab(hash);
+    } else {
+      navigate("/roadmap#auth", { replace: true });
+    }
+  }, [location.hash, navigate]);
+
+  // Handle swipe functionality
+  const handleSwipe = (direction) => {
+    const currentIndex = tabsData.findIndex((tab) => tab.id === activeTab);
+    let newIndex;
+
+    if (direction === "left") {
+      // Swipe left = go to next tab
+      newIndex = currentIndex < tabsData.length - 1 ? currentIndex + 1 : 0;
+    } else {
+      // Swipe right = go to previous tab
+      newIndex = currentIndex > 0 ? currentIndex - 1 : tabsData.length - 1;
+    }
+
+    const newTab = tabsData[newIndex];
+    navigate(`/roadmap${newTab.href}`);
+    setActiveTab(newTab.id);
+  };
+
+  // Configure swipe handlers
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleSwipe("left"),
+    onSwipedRight: () => handleSwipe("right"),
+    trackMouse: true, // Enable mouse dragging for desktop testing
+    preventScrollOnSwipe: true,
+    delta: 50, // Minimum distance for swipe detection
+  });
+
   // Function to determine the status color
   const getStatusColor = (status) => {
     switch (status) {
@@ -75,6 +103,7 @@ export default function Roadmap() {
         return "bg-gray-100";
     }
   };
+
   const getStatusIcon = (status) => {
     switch (status) {
       case "completed":
@@ -112,7 +141,7 @@ export default function Roadmap() {
   };
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto" {...swipeHandlers}>
       <Container>
         <div className="max-w-[560px] mx-auto w-full py-10 space-y-5">
           {/* Tabs Navigation */}
