@@ -3,6 +3,7 @@ import Container from "../components/layout/Container";
 import { BsGridFill, BsRocketTakeoffFill } from "react-icons/bs";
 import { BiSolidBriefcaseAlt } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { FaGear } from "react-icons/fa6";
 
 export default function Roadmap() {
   const tabsData = [
@@ -21,6 +22,12 @@ export default function Roadmap() {
     {
       name: "Jobs",
       icon: <BiSolidBriefcaseAlt />,
+      href: "#jobs",
+      current: false,
+    },
+    {
+      name: "Settings",
+      icon: <FaGear />,
       href: "#jobs",
       current: false,
     },
@@ -75,7 +82,7 @@ export default function Roadmap() {
   return (
     <div className="w-full mx-auto">
       <Container>
-        <div className="max-w-[560px] mx-auto w-full py-10 space-y-10">
+        <div className="max-w-[560px] mx-auto w-full py-10 space-y-5">
           {/* Tabs Navigation */}
           <div className="w-full flex flex-col items-center gap-3">
             <div className="flex w-fit gap-2 bg-white border border-gray-200 p-1 rounded-full justify-center items-center">
@@ -84,7 +91,7 @@ export default function Roadmap() {
                   key={tab.name}
                   to={tab.href}
                   className={`
-                      whitespace-nowrap font-medium text-xs px-4 py-2.5 rounded-full transition-colors duration-200
+                      whitespace-nowrap flex items-center gap-2 font-medium text-xs px-4 py-2.5 rounded-full transition-colors duration-200
                       ${
                         tab.current
                           ? "bg-c-color text-white"
@@ -97,10 +104,13 @@ export default function Roadmap() {
                     tab.current = true;
                   }}
                 >
+                  {tab.icon}
                   {tab.name}
                 </Link>
               ))}
             </div>
+          </div>
+          <div className="spsace-y-2">
             <h1 className="text-xl font-bold">Product Roadmap</h1>
             <p className="text-gray-600">
               Our development timeline and progress
