@@ -6,9 +6,16 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGear } from "react-icons/fa6";
 import { HiLockClosed } from "react-icons/hi";
 import { roadmapData } from "../components/data/roadmapData";
-import { PiCheckBold } from "react-icons/pi";
+import {
+  PiBatteryChargingVerticalFill,
+  PiBatteryVerticalEmpty,
+  PiBatteryVerticalFullFill,
+  PiBatteryVerticalMediumFill,
+  PiCheckBold,
+} from "react-icons/pi";
 import { RiLoader2Line } from "react-icons/ri";
 import { GrStatusCriticalSmall } from "react-icons/gr";
+import { CgCalendar } from "react-icons/cg";
 
 export default function Roadmap() {
   const location = useLocation();
@@ -74,11 +81,11 @@ export default function Roadmap() {
   const getStatusIcon = (status) => {
     switch (status) {
       case "completed":
-        return <PiCheckBold size={14} />;
+        return <PiBatteryVerticalFullFill size={14} />;
       case "pending":
-        return <RiLoader2Line size={14} />;
+        return <PiBatteryVerticalMediumFill size={14} />;
       case "upcoming":
-        return <GrStatusCriticalSmall size={14} />;
+        return <PiBatteryVerticalEmpty size={14} />;
       default:
         return "bg-gray-300";
     }
@@ -151,14 +158,14 @@ export default function Roadmap() {
               <div key={item.id} className="relative">
                 {/* Timeline connector */}
                 {index < currentRoadmapItems.length - 1 && (
-                  <div className="absolute left-[12px] top-[10px] w-[2px] bg-gray-200 -z-1 h-[calc(100%+32px-8px)]"></div>
+                  <div className="absolute left-[15px] top-[10px] w-[2px] bg-gray-200 -z-1 h-[calc(100%+32px-8px)]"></div>
                 )}
 
                 {/* Roadmap item */}
                 <div className="flex items-start gap-4">
                   {/* Status indicator */}
                   <div
-                    className={`w-6 h-6 p-1 rounded-lg flex items-center justify-center shrink-0 ${getStatusColor(
+                    className={`w-8 h-8 p-1 rounded-lg flex items-center justify-center shrink-0 ${getStatusColor(
                       item.status
                     )}`}
                   >
@@ -166,16 +173,23 @@ export default function Roadmap() {
                   </div>
 
                   {/* Roadmap content */}
-                  <div className="flex-1">
+                  <div className="w-full flex flex-col gap-1">
                     <div className="flex justify-between items-center">
-                      <h3 className="text-sm font-medium">{item.task}</h3>
-                      <span className="text-xs font-light text-gray-500">
-                        {item.date}
-                      </span>
+                      <div className="space-y-1">
+                        <h3 className="text-sm font-medium">{item.task}</h3>
+                        <p className="text-xs font-light text-gray-600">
+                          {formatStatus(item.status)}
+                        </p>
+                      </div>
+                      {item.date && (
+                        <div className="flex flex-col items-end gap-1 text-gray-500">
+                          <CgCalendar />
+                          <span className="text-xs font-light">
+                            {item.date}
+                          </span>
+                        </div>
+                      )}
                     </div>
-                    <p className="text-xs font-light text-gray-600 mt-1">
-                      {formatStatus(item.status)}
-                    </p>
                   </div>
                 </div>
               </div>
