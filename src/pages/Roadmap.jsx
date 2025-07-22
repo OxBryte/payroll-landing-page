@@ -4,14 +4,21 @@ import { BsGridFill, BsRocketTakeoffFill } from "react-icons/bs";
 import { BiSolidBriefcaseAlt } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { FaGear } from "react-icons/fa6";
+import { HiLockClosed } from "react-icons/hi";
 
 export default function Roadmap() {
   const tabsData = [
     {
+      name: "Auth",
+      icon: <HiLockClosed />,
+      href: "#auth",
+      current: true,
+    },
+    {
       name: "Dashboard",
       icon: <BsGridFill />,
       href: "#dashboard",
-      current: true,
+      current: false,
     },
     {
       name: "Workspace",
@@ -28,7 +35,7 @@ export default function Roadmap() {
     {
       name: "Settings",
       icon: <FaGear />,
-      href: "#jobs",
+      href: "#settings",
       current: false,
     },
   ];
@@ -85,7 +92,7 @@ export default function Roadmap() {
         <div className="max-w-[560px] mx-auto w-full py-10 space-y-5">
           {/* Tabs Navigation */}
           <div className="w-full flex flex-col items-center gap-3">
-            <div className="flex w-fit gap-2 bg-white border border-gray-200 p-1 rounded-full justify-center items-center">
+            <div className="flex w-fit gap-1 bg-white border border-gray-200 p-1 rounded-full justify-center items-center">
               {tabsData.map((tab) => (
                 <Link
                   key={tab.name}
@@ -111,11 +118,12 @@ export default function Roadmap() {
             </div>
           </div>
           <div className="spsace-y-2">
-            <h1 className="text-xl font-bold">Product Roadmap</h1>
-            <p className="text-gray-600">
+            <h1 className="text-lg font-bold">Product Roadmap</h1>
+            <p className="text-gray-600 text-xs font-light">
               Our development timeline and progress
             </p>
           </div>
+
           {/* Roadmap items */}
           <div className="space-y-8">
             {roadmapItems.map((item, index) => (
