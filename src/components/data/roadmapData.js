@@ -92,8 +92,8 @@ export const roadmapData = {
     {
       id: 7,
       task: "Chain Selection (Optimism, Celo, Arbitrum)",
-      status: "pending",
-      date: "",
+      status: "completed",
+      date: "06/03/2025",
     },
     {
       id: 8,
@@ -118,6 +118,24 @@ export const roadmapData = {
       task: "Payroll Status Tracking",
       status: "completed",
       date: "06/05/2025",
+    },
+    {
+      id: 11,
+      task: "Payroll Overview Chart",
+      status: "completed",
+      date: "06/06/2025",
+    },
+    {
+      id: 12,
+      task: "Workspace Administration",
+      status: "completed",
+      date: "06/06/2025",
+    },
+    {
+      id: 13,
+      task: "Workspace Roles Management",
+      status: "completed",
+      date: "06/06/2025",
     },
   ],
   jobs: [
@@ -155,12 +173,6 @@ export const roadmapData = {
     },
     {
       id: 5,
-      task: "Monthly Salary Configuration",
-      status: "upcoming",
-      date: "",
-    },
-    {
-      id: 6,
       task: "Employment Term Settings",
       status: "upcoming",
       date: "",
