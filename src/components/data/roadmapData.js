@@ -145,6 +145,42 @@ export const roadmapData = {
       status: "pending",
       date: "",
     },
+    {
+      id: 2,
+      task: "Job Listing",
+      status: "pending",
+      date: "",
+    },
+    {
+      id: 3,
+      task: "Job Application Process",
+      status: "pending",
+      date: "",
+    },
+    {
+      id: 4,
+      task: "Job Status Tracking",
+      status: "pending",
+      date: "",
+    },
+    {
+      id: 5,
+      task: "Job Overview Chart",
+      status: "pending",
+      date: "",
+    },
+    {
+      id: 6,
+      task: "Job Administration",
+      status: "pending",
+      date: "",
+    },
+    {
+      id: 7,
+      task: "Job Management",
+      status: "pending",
+      date: "",
+    },
   ],
   settings: [
     {
