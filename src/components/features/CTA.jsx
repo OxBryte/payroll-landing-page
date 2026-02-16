@@ -12,7 +12,7 @@ export default function CTA() {
               Ready to simplify payroll?
             </h2>
             <div className="flex gap-6 items-center">
-              <Link to="/">
+              <Link target="_blank" to="https://app.gloc.pro">
                 <button className="bg-c-color px-4 py-2 rounded-md text-sm text-white scale-[110%] cursor-pointer">
                   Launch App
                 </button>

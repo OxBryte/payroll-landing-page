@@ -24,7 +24,7 @@ export default function Home() {
         {/* <About /> */}
       </Container>
       <Features />
-      <Pricing />
+      {/* <Pricing /> */}
       <CTA />
       <Footer />
     </div>
