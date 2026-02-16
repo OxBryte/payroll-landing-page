@@ -65,7 +65,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link to="/">
+          <Link target="_blank" to="https://app.gloc.pro">
             <motion.button
               className="hidden md:block cursor-pointer bg-gradient-to-r from-c-color to-c-color-sec px-6 py-2.5 rounded-lg text-white font-semibold text-sm shadow-lg shadow-c-color/25"
               whileHover={{
@@ -113,13 +113,15 @@ export default function Navbar() {
                   {item.label}
                 </motion.a>
               ))}
-              <motion.button
-                className="w-full bg-gradient-to-r from-c-color to-c-color-sec px-6 py-3 rounded-lg text-white font-semibold text-sm mt-4"
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                Launch App
-              </motion.button>
+              <Link target="_blank" to="https://app.gloc.pro">
+                <motion.button
+                  className="w-full bg-gradient-to-r from-c-color to-c-color-sec px-6 py-3 rounded-lg text-white font-semibold text-sm mt-4"
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  Launch App
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         )}

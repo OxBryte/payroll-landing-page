@@ -38,22 +38,26 @@ export default function Hero() {
         />
 
         <div className="flex flex-col gap-6 z-10 items-center text-center max-w-4xl">
-          <motion.div
-            className="bg-c-color/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-2 text-c-color border border-c-color/30"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{
-              scale: 1.05,
-              backgroundColor: "rgba(148, 194, 148, 0.3)",
-            }}
+          <Link
+            target="_blank"
+            to="https://paragraph.com/@0xb9ffcd5fb867905e2f823a5a29dc7a2cd1c101b5/preview/lfkUFpf56ZsJ8h5xQhtu"
           >
-            <BsLightningChargeFill className="animate-pulse" />
-            <p className="text-sm font-medium">
-              Latest update - Enhanced crypto payroll features
-            </p>
-          </motion.div>
-
+            <motion.div
+              className="bg-c-color/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-2 text-c-color border border-c-color/30"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "rgba(148, 194, 148, 0.3)",
+              }}
+            >
+              <BsLightningChargeFill className="animate-pulse" />
+              <p className="text-sm font-medium">
+                Latest update - Enhanced crypto payroll features
+              </p>
+            </motion.div>
+          </Link>
           <motion.h1
             className="font-bricolage text-[40px] md:text-[72px] lg:text-[80px] font-bold leading-[44px] md:leading-[68px] lg:leading-[76px]"
             initial={{ opacity: 0, y: 30 }}
@@ -83,7 +87,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Link to="/">
+            <Link target="_blank" to="https://app.gloc.pro">
               <motion.button
                 className="cursor-pointer bg-gradient-to-r from-c-color to-c-color-sec px-8 py-4 rounded-xl text-white font-semibold text-base shadow-lg shadow-c-color/25 flex items-center gap-2 group"
                 whileHover={{
