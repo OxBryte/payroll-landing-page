@@ -123,7 +123,7 @@ export default function Hero() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://youtu.be/qYsGSUhkkX0?autoplay=1"
+                src="https://www.youtube.com/embed/qYsGSUhkkX0?autoplay=1"
                 title="Gloc Product Demo"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
