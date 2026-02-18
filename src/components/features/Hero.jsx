@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../common/Modal";
 import { motion } from "framer-motion";
 import { BsArrowRight, BsLightningChargeFill } from "react-icons/bs";
 import Navbar from "../layout/Navbar";
 import { Link } from "react-router-dom";
 
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="w-full min-h-[100dvh] mx-auto">
       <Navbar />
@@ -104,7 +106,7 @@ export default function Hero() {
 
             <motion.button
               className="cursor-pointer border-2 border-white/20 px-8 py-4 rounded-xl text-white font-medium text-base backdrop-blur-sm hover:border-c-color/50 transition-colors duration-300"
-              disabled
+              onClick={() => setIsModalOpen(true)}
               whileHover={{
                 scale: 1.05,
                 borderColor: "rgba(148, 194, 148, 0.5)",
@@ -115,6 +117,21 @@ export default function Hero() {
               Watch Demo
             </motion.button>
           </motion.div>
+
+          <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+            <div className="aspect-video w-full">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://youtu.be/qYsGSUhkkX0?autoplay=1"
+                title="Gloc Product Demo"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
+          </Modal>
 
           <motion.div
             className="flex items-center gap-6 mt-8 text-white/60 text-sm"

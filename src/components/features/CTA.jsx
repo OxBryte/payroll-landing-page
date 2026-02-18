@@ -18,7 +18,7 @@ export default function CTA() {
                 </button>
               </Link>
               <Link
-                to="https://calendly.com/olumidesilas/gloc-payroll"
+                to="https://t.me/oxbryte"
                 target="_blank"
               >
                 <button className="bg-white px-4 py-2 rounded-md text-sm text-black scale-[110%] cursor-pointer">
